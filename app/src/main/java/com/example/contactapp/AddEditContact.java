@@ -33,10 +33,10 @@ public class AddEditContact extends AppCompatActivity {
     private static final int IMAGE_FROM_GALLERY_CODE = 300;
     private static final int IMAGE_FROM_CAMERA_CODE = 400;
     private ImageView profileIv;
-    private EditText nameEt, phoneEt, emailEt, noteEt;
+    private EditText nameEt, phoneEt, emailEt;
     private FloatingActionButton fab;
     //String variable;
-    private String id, image, name, phone, email, note, addedTime, updatedTime;
+    private String id, image, name, phone, email, addedTime, updatedTime;
     private Boolean isEditMode;
     //action bar
     private ActionBar actionBar;
@@ -68,7 +68,6 @@ public class AddEditContact extends AppCompatActivity {
         nameEt = findViewById(R.id.nameEt);
         phoneEt = findViewById(R.id.phoneEt);
         emailEt = findViewById(R.id.emailEt);
-        noteEt = findViewById(R.id.noteEt);
         fab = findViewById(R.id.fab);
 
         //inicijalizacija action bara
@@ -93,7 +92,6 @@ public class AddEditContact extends AppCompatActivity {
             name = intent.getStringExtra("NAME");
             phone = intent.getStringExtra("PHONE");
             email = intent.getStringExtra("EMAIL");
-            note = intent.getStringExtra("NOTE");
             addedTime = intent.getStringExtra("ADDEDTIME");
             updatedTime = intent.getStringExtra("UPDATEDTIME");
             image = intent.getStringExtra("IMAGE");
@@ -102,7 +100,6 @@ public class AddEditContact extends AppCompatActivity {
             nameEt.setText(name);
             phoneEt.setText(phone);
             emailEt.setText(email);
-            noteEt.setText(note);
 
             //postavljanje slike
             imageUri = Uri.parse(image);
@@ -202,13 +199,13 @@ public class AddEditContact extends AppCompatActivity {
         name = nameEt.getText().toString();
         phone = phoneEt.getText().toString();
         email = emailEt.getText().toString();
-        note = noteEt.getText().toString();
+
 
         // trenutno vrijeme
         String timeStamp = "" + System.currentTimeMillis();
 
 
-        if (!name.isEmpty() || !phone.isEmpty() || !email.isEmpty() || !note.isEmpty()) {
+        if (!name.isEmpty() || !phone.isEmpty() || !email.isEmpty()) {
 
             if (isEditMode) {
 
@@ -218,12 +215,17 @@ public class AddEditContact extends AppCompatActivity {
                         "" + name,
                         "" + phone,
                         "" + email,
-                        "" + note,
                         "" + addedTime,
                         "" + timeStamp // updated time will new time
                 );
 
                 Toast.makeText(getApplicationContext(), "Updated Successfully....", Toast.LENGTH_SHORT).show();
+                // Nakon uspješnog dodavanja, povratak na glavnu stranicu (MainActivity)
+                Intent intent = new Intent(AddEditContact.this, MainActivity.class);
+                startActivity(intent);
+
+                // Zatvaranje trenutne aktivnosti (AddEditContact)
+                finish();
 
             } else {
 
@@ -232,17 +234,28 @@ public class AddEditContact extends AppCompatActivity {
                         "" + name,
                         "" + phone,
                         "" + email,
-                        "" + note,
                         "" + timeStamp,
                         "" + timeStamp
                 );
 
                 Toast.makeText(getApplicationContext(), "Inserted Successfully.... " + id, Toast.LENGTH_SHORT).show();
+                // Nakon uspješnog dodavanja, povratak na glavnu stranicu (MainActivity)
+                Intent intent = new Intent(AddEditContact.this, MainActivity.class);
+                startActivity(intent);
+
+                // Zatvaranje trenutne aktivnosti (AddEditContact)
+                finish();
             }
 
         } else {
 
             Toast.makeText(getApplicationContext(), "Nothing to save....", Toast.LENGTH_SHORT).show();
+            // Nakon uspješnog dodavanja, povratak na glavnu stranicu (MainActivity)
+            Intent intent = new Intent(AddEditContact.this, MainActivity.class);
+            startActivity(intent);
+
+            // Zatvaranje trenutne aktivnosti (AddEditContact)
+            finish();
         }
 
     }

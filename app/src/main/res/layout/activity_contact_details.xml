@@ -22,7 +22,7 @@
             android:id="@+id/nameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Jowel Ahmed"
+            tools:text="Roko I Lovro"
             android:textColor="@color/colorTextSecondary"
             android:textStyle="bold"
             android:textSize="@dimen/_16sdp"
@@ -30,14 +30,6 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"/>
 
-        <TextView
-            android:id="@+id/noteTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="This is for note area This is for note area This is for note area"
-            android:padding="@dimen/_10sdp"
-            android:textColor="@color/colorTextSecondary"
-            android:textSize="@dimen/_12sdp"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -46,7 +38,7 @@
             android:stretchColumns="2">
             <TableRow>
                 <TextView
-                    android:text="Phone"
+                    android:text="Mobitel"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     android:textColor="@color/colorTextPrimary"/>
@@ -78,7 +70,7 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Added Time"
+                    android:text="Dodano: "
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     android:textColor="@color/colorTextPrimary"/>
@@ -94,7 +86,7 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:text="Updated Time"
+                    android:text="Uređivano: "
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     android:textColor="@color/colorTextPrimary"/>

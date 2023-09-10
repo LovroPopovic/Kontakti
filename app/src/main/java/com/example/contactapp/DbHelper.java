@@ -40,7 +40,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     // FUnkcija za ubacivanje novih kontakata u bp.
-    public long insertContact(String image,String name,String phone,String email,String note,String addedTime,String updatedTime){
+    public long insertContact(String image,String name,String phone,String email,String addedTime,String updatedTime){
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -53,7 +53,6 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put(Constants.C_NAME,name);
         contentValues.put(Constants.C_PHONE,phone);
         contentValues.put(Constants.C_EMAIL,email);
-        contentValues.put(Constants.C_NOTE,note);
         contentValues.put(Constants.C_ADDED_TIME,addedTime);
         contentValues.put(Constants.C_UPDATED_TIME,updatedTime);
 
@@ -69,7 +68,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     // Funkcija za azuriranje kontakta
-    public void updateContact(String id,String image,String name,String phone,String email,String note,String addedTime,String updatedTime){
+    public void updateContact(String id,String image,String name,String phone,String email,String addedTime,String updatedTime){
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -81,7 +80,6 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put(Constants.C_NAME,name);
         contentValues.put(Constants.C_PHONE,phone);
         contentValues.put(Constants.C_EMAIL,email);
-        contentValues.put(Constants.C_NOTE,note);
         contentValues.put(Constants.C_ADDED_TIME,addedTime);
         contentValues.put(Constants.C_UPDATED_TIME,updatedTime);
 
@@ -94,12 +92,12 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     // Funkcija za brisanje kontakata
-    public void deleteContact(String id)
-    {
-        SQLiteDatabase db =  getWritableDatabase();
-        db.delete(Constants.TABLE_NAME,"WHERE"+" =? ",new String[]{id});
+    public void deleteContact(String id) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(Constants.TABLE_NAME, Constants.C_ID + "=?", new String[]{id});
         db.close();
     }
+
 
     // Funkcija za brisanje kontakata
     public void deleteAllContact(){
@@ -125,7 +123,6 @@ public class DbHelper extends SQLiteOpenHelper {
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_IMAGE)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_PHONE)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_EMAIL)),
-                        ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_NOTE)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_ADDED_TIME)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_UPDATED_TIME))
                 );
@@ -157,7 +154,6 @@ public class DbHelper extends SQLiteOpenHelper {
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_IMAGE)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_PHONE)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_EMAIL)),
-                        ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_NOTE)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_ADDED_TIME)),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_UPDATED_TIME))
                 );

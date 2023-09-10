@@ -49,7 +49,6 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ContactV
         String name = modelContact.getName();
         String phone = modelContact.getPhone();
         String email = modelContact.getEmail();
-        String note = modelContact.getNote();
         String addedTime = modelContact.getAddedTime();
         String updatedTime = modelContact.getUpdatedTime();
 
@@ -92,7 +91,6 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ContactV
                 intent.putExtra("NAME", name);
                 intent.putExtra("PHONE", phone);
                 intent.putExtra("EMAIL", email);
-                intent.putExtra("NOTE", note);
                 intent.putExtra("ADDEDTIME", addedTime);
                 intent.putExtra("UPDATEDTIME", updatedTime);
                 intent.putExtra("IMAGE", image);

@@ -17,7 +17,7 @@ import java.util.Locale;
 public class ContactDetails extends AppCompatActivity {
 
     //pogled
-    private TextView nameTv, phoneTv, emailTv, addedTimeTv, updatedTimeTv, noteTv;
+    private TextView nameTv, phoneTv, emailTv, addedTimeTv, updatedTimeTv;
     private ImageView profileIv;
 
     private String id;
@@ -43,7 +43,7 @@ public class ContactDetails extends AppCompatActivity {
         emailTv = findViewById(R.id.emailTv);
         addedTimeTv = findViewById(R.id.addedTimeTv);
         updatedTimeTv = findViewById(R.id.updatedTimeTv);
-        noteTv = findViewById(R.id.noteTv);
+
 
         profileIv = findViewById(R.id.profileIv);
 
@@ -65,7 +65,6 @@ public class ContactDetails extends AppCompatActivity {
                 String image = "" + cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_IMAGE));
                 String phone = "" + cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_PHONE));
                 String email = "" + cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_EMAIL));
-                String note = "" + cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_NOTE));
                 String addTime = "" + cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_ADDED_TIME));
                 String updateTime = "" + cursor.getString(cursor.getColumnIndexOrThrow(Constants.C_UPDATED_TIME));
 
@@ -82,7 +81,6 @@ public class ContactDetails extends AppCompatActivity {
                 nameTv.setText(name);
                 phoneTv.setText(phone);
                 emailTv.setText(email);
-                noteTv.setText(note);
                 addedTimeTv.setText(timeAdd);
                 updatedTimeTv.setText(timeUpdate);
 

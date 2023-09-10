@@ -2,17 +2,16 @@ package com.example.contactapp;
 
 public class ModelContact {
 
-    private String id,name,image,phone,email,note,addedTime,updatedTime;
+    private String id,name,image,phone,email,addedTime,updatedTime;
 
     // Izradujemo konstruktor za kontakt
 
-    public ModelContact(String id, String name, String image, String phone, String email, String note, String addedTime, String updatedTime) {
+    public ModelContact(String id, String name, String image, String phone, String email, String addedTime, String updatedTime) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.phone = phone;
         this.email = email;
-        this.note = note;
         this.addedTime = addedTime;
         this.updatedTime = updatedTime;
     }
@@ -59,13 +58,6 @@ public class ModelContact {
         this.email = email;
     }
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
 
     public String getAddedTime() {
         return addedTime;

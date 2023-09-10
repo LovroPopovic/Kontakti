@@ -28,12 +28,12 @@
         <EditText
             android:id="@+id/nameEt"
             style="@style/InputEditTextStyle"
-            android:hint="Name"/>
+            android:hint="Ime"/>
 
         <EditText
             android:id="@+id/phoneEt"
             style="@style/InputEditTextStyle"
-            android:hint="Phone"
+            android:hint="Mobitel"
             android:inputType="phone"/>
 
         <EditText
@@ -42,11 +42,7 @@
             android:hint="Email"
             android:inputType="textEmailAddress"/>
 
-        <EditText
-            android:id="@+id/noteEt"
-            style="@style/InputEditTextStyle"
-            android:hint="Note"
-            android:inputType="textLongMessage"/>
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
