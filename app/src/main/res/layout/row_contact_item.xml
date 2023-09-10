@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.chauthai.swipereveallayout.SwipeRevealLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parentLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/parentLayout"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorSecondary"
     app:dragEdge="right"
     app:mode="same_level">
 
-
+    <!-- Content layout -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
+        <!-- Edit button -->
         <TextView
             android:id="@+id/contact_edit"
             android:layout_width="@dimen/_70sdp"
@@ -22,8 +25,9 @@
             android:background="#2196F3"
             android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
+        <!-- Delete button -->
         <TextView
             android:id="@+id/contact_delete"
             android:layout_width="@dimen/_70sdp"
@@ -33,12 +37,16 @@
             android:background="#F44336"
             android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <!-- Main content layout -->
     <RelativeLayout
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <!-- Contact image -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/contact_image"
             android:layout_width="@dimen/_50sdp"
@@ -46,8 +54,9 @@
             android:src="@drawable/ic_baseline_person_24"
             app:civ_border_width="@dimen/_1sdp"
             app:civ_border_color="@color/colorTextPrimary"
-            android:padding="@dimen/_5sdp"/>
+            android:padding="@dimen/_5sdp" />
 
+        <!-- Contact name -->
         <TextView
             android:id="@+id/contact_name"
             android:layout_width="match_parent"
@@ -58,8 +67,9 @@
             android:layout_toEndOf="@+id/contact_image"
             android:layout_toStartOf="@+id/contact_number_dial"
             android:layout_centerInParent="true"
-            android:textSize="@dimen/_16sdp"/>
+            android:textSize="@dimen/_16sdp" />
 
+        <!-- Dial button -->
         <ImageView
             android:id="@+id/contact_number_dial"
             android:layout_width="wrap_content"
@@ -69,12 +79,5 @@
             android:layout_centerInParent="true"
             android:layout_marginEnd="@dimen/_10sdp"
             app:tint="@color/colorTextPrimary" />
-
-
     </RelativeLayout>
-
-
-
-
-
 </com.chauthai.swipereveallayout.SwipeRevealLayout>

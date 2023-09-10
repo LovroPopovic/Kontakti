@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+    </style>
+
+    <!-- Style for the input fields (EditText) -->
+    <style name="InputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">@color/white</item>
+        <item name="android:background">@drawable/background_input_field</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+</resources>

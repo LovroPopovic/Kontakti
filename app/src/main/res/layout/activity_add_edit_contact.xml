@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +15,6 @@
         android:layout_centerInParent="true"
         android:padding="@dimen/_10sdp">
 
-<!--        circle image for profile image-->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileIv"
             android:layout_width="@dimen/_70sdp"
@@ -24,75 +24,31 @@
             app:civ_border_width="@dimen/_1sdp"
             app:civ_border_color="@color/colorTextPrimary"/>
 
-<!--         editText for name input-->
+        <!-- EditText for input fields -->
         <EditText
             android:id="@+id/nameEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_input_field"
-            android:padding="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:drawableStart="@drawable/ic_baseline_text_fields_24"
-            android:drawablePadding="@dimen/_5sdp"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/colorTextSecondary"/>
+            style="@style/InputEditTextStyle"
+            android:hint="Name"/>
 
-<!--        editText for phone input-->
         <EditText
             android:id="@+id/phoneEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputEditTextStyle"
             android:hint="Phone"
-            android:inputType="phone"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_input_field"
-            android:padding="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:drawableStart="@drawable/ic_baseline_phone_24"
-            android:drawablePadding="@dimen/_5sdp"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/colorTextSecondary"/>
+            android:inputType="phone"/>
 
-        <!--        editText for email input-->
         <EditText
             android:id="@+id/emailEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputEditTextStyle"
             android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_input_field"
-            android:padding="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:drawableStart="@drawable/ic_baseline_email_24"
-            android:drawablePadding="@dimen/_5sdp"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/colorTextSecondary"/>
+            android:inputType="textEmailAddress"/>
 
-        <!--        editText for note input-->
         <EditText
             android:id="@+id/noteEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/InputEditTextStyle"
             android:hint="Note"
-            android:inputType="textLongMessage"
-            android:textColorHint="@color/white"
-            android:background="@drawable/background_input_field"
-            android:padding="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:drawableStart="@drawable/ic_baseline_note_24"
-            android:drawablePadding="@dimen/_5sdp"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/colorTextSecondary"/>
+            android:inputType="textLongMessage"/>
     </LinearLayout>
 
-
-
-
-<!--    fab button for add data to database-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
